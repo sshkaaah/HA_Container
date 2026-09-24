@@ -7,6 +7,8 @@ services:
     ports:
       - "3006:3000" # внешний 3006, внутренний 3000 у WUD
     environment:
+      WUD_AUTH_ADMIN_USER: "admin" #Новый WUD требует обязательной авторизации, автоматически останавливается и контейнер перезапускается
+      WUD_AUTH_ADMIN_PASSWORD: "MySecurePassword123"
       WUD_TRIGGER_MQTT_MOSQUITTO_URL: "mqtt://localhost:1883"  # имя контейнера брокера в сети
       WUD_TRIGGER_MQTT_MOSQUITTO_HASS_ENABLED: "true"
       WUD_TRIGGER_MQTT_MOSQUITTO_HASS_DISCOVERY: "true"
